@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自定义列表符号</title>
+  <link rel="stylesheet" href="./css/common.css" />
+  <style>
+    ul {
+      list-style: none;
+      color: #fff;
+      font-size: 20px;
+      border: 3px solid #000;
+      padding: 1rem 2rem;
+      min-height: 200px;
+      margin: 15px 2rem 0 0;
+      background: #323232;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+    }
+
+    li {
+      padding: 0.3rem 0;
+    }
+
+    li::before {
+      content: "🗹 ";
+      color: aqua;
+    }
+
+    li.completed::before {
+      content: "✔ ";
+      text-decoration: none;
+      color: greenyellow;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      color: #bdbdbd;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>自定义列表符号</h1>
+  </nav>
+  <main>
+    <div>
+      <h2>待处理</h2>
+      <ul>
+        <li>待办任务1</li>
+        <li>待办任务2</li>
+        <li>待办任务3</li>
+        <li>待办任务4</li>
+        <li>待办任务5</li>
+      </ul>
+    </div>
+    <div>
+      <h2>已完成</h2>
+      <ul>
+        <li class="completed">完成任务1</li>
+        <li class="completed">完成任务2</li>
+        <li class="completed">完成任务3</li>
+      </ul>
+    </div>
+  </main>
+
+
+</body>
+</html>
+<!--实现原理-->
+
+<!--一、首先我们禁用了ul的默认符号样式list-style: none-->
+
+<!--二、在li的:before伪元素上给予content内容值，待处理任务使用🗹，已完成任务li.completed:before使用✔-->
+
+<!--三、为了展示效果更加好看我分别给了li和li .completed两个不同的颜色-->

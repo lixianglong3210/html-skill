@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>面包屑导航条</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <style>
+      .breadcrumb {
+        font-size: 1.6rem;
+        color: #fff;
+      }
+      .breadcrumb a:first-child {
+        color: #82fcfd;
+      }
+      .breadcrumb a:first-child::before {
+        content: " » ";
+      }
+      .breadcrumb a::after {
+        content: " /";
+        color: #ef6eae;
+      }
+      .breadcrumb a:last-child::after {
+        content: "";
+      }
+    </style>
+</head>
+<body>
+  <nav>
+    <h1>面包屑导航</h1>
+  </nav>
+  <main>
+    <div class="breadcrumb">
+      <a>首页</a>
+      <a>前端</a>
+      <a>教程</a>
+    </div>
+  </main>
+
+  <div style="width: 800px;padding: 2em;color: #fff;">
+    <p>实现逻辑</p>
+    <ol>
+      <li>这个导航含有 3 个a标签，首先给每个a标签加入一个伪元素::after，然后在content属性插入/符号。</li>
+      <li>然后使用a:first-child，这个伪类会选择到第一个a标签，然后使用content属性加入»符号。</li>
+      <li>因为我们第一步在每个a标签的后面插入了/符号, 所以我们需要在最后一个a标签清除掉。这里我们使用:last-child选择到最后一个a标签，然后用content: " "属性把伪元素的内容清楚掉。</li>
+    </ol>
+  </div>
+</body>
+</html>

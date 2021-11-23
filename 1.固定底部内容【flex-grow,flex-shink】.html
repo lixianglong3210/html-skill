@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>固定底部内容【flex-grow,flex-shink】</title>
+    <link rel="stylesheet" href="./css/btn.css" />
+    <style rel="stylesheet">
+        #document {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #202020;
+            font-family: microsoft yahei, wenquanyi micro hei, sans-serif !important;
+        }
+
+        nav,
+        footer {
+            background: #494949;
+            display: flex;
+            justify-content: center;
+        }
+
+        main {
+            color: #bdbdbd;
+            background: #202020;
+            flex: auto;
+        }
+
+        footer {
+            flex-shrink: 0;
+        }
+
+        * {
+            margin: 0;
+        }
+        h1,
+        p {
+            padding: 15px;
+        }
+        nav > h1 {
+            color: #82fcfd;
+            text-shadow: 1px 1px 4px #00000080;
+        }
+        footer > h1 {
+            color: #82fcfd;
+            text-shadow: 1px 1px 4px #00000080;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="document">
+        <nav>
+            <h1>头部内容</h1>
+        </nav>
+        <main id="main">
+            <button class="pulse" onclick="addMore()">
+                点击看更多内容发生的变化
+            </button>
+            <p id="content">可以添加更多内容看看底部的变化哦！</p>
+        </main>
+        <footer>
+            <h1>底部内容</h1>
+        </footer>
+    </div>
+</body>
+<script>
+    function addMore() {
+        for (let i = 0; i < 20; i++) {
+            setTimeout(function() {
+                let content = document.createTextNode(
+                    document.getElementById("content").innerHTML
+                );
+                let mainContainer = document.getElementById("main");
+                let pElement = document.createElement("p");
+                pElement.appendChild(content);
+                mainContainer.append(pElement);
+            }, 100 * i);
+        }
+    }
+</script>
+</html>
+<!--随着 CSS3 的来临，最完美的实现方式是使用Flexbox。实现的关键就是使用不太被关注的flex-grow属性，可以在我们的内容标签元素（比如div）中使用。在我们下面的例子里使用了main标签。-->
+<!--flew-grow是用来控制一个 flex 元素相对它同等级 flex 元素的自身可扩充的空间。如果我们使用flex-grow: 0，那这个 flex 元素就完全不会扩展了。所以我们需要把头部和底部之间的内容标签元素设置为flex-grow: 1或者flex-grow: auto，这样内容部分就会自动填充满头部和底部之外的所有空间。-->
+
+<!--为了避免底部内容受内容部分扩充空间的影响，我们给footer底部元素flex-shrink: 0属性。flex-shrink的作用与flex-grow是恰恰相反，用来控制 flex 元素收缩的空间，这里我们给了flex-shrink: 0就是为了底部footer的大小不受影响。-->

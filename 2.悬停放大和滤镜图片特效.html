@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>悬停放大和滤镜图片特效</title>
+    <style>
+        .img-wrapper {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .img-wrapper {
+            display: inline-block;
+            box-sizing: border-box;
+            border: 3px solid #000;
+        }
+
+        .img-wrapper img {
+            height: 400px;
+            -webkit-transition: 0.3s linear;
+            transition: 0.3s linear;
+        }
+
+        .img-wrapper img:hover {
+            transform: scale(1.1);
+        }
+
+        /* ==============
+        * 灰度过滤
+        * ==============*/
+        .grayscale-img {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        .grayscale-img:hover {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+        }
+
+        /* ==============
+        * 深褐色过滤
+        * ==============*/
+        .sepia-img {
+            -webkit-filter: sepia(100%);
+            filter: sepia(100%);
+        }
+
+        .sepia-img:hover {
+            -webkit-filter: sepia(0);
+            filter: sepia(0);
+        }
+
+        /* ==============
+        * 高斯模糊过滤
+        * ==============*/
+        .blur-img {
+            -webkit-filter: blur(5px);
+            filter: blur(5px);
+        }
+
+        .blur-img:hover {
+            -webkit-filter: blur(0);
+            filter: blur(0);
+        }
+
+        /* ==============
+        * 图片变亮或变暗过滤，如果值是0%，图像会全黑，如果没有设定值，默认是1
+        * ==============*/
+        .brightness-img {
+            -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+        }
+
+        .brightness-img:hover {
+            -webkit-filter: brightness(200%);
+            filter: brightness(200%);
+        }
+
+        /* ==============
+        * 图片对比度过滤，如果值是0%，图像会全黑，如果没有设定值，默认是1
+        * ==============*/
+        .contrast-img {
+            -webkit-filter: contrast(100%);
+            filter: contrast(100%);
+        }
+
+        .contrast-img:hover {
+            -webkit-filter: contrast(200%);
+            filter: contrast(200%);
+        }
+
+        /* ==============
+        * 图像设置一个阴影效果
+        * ==============*/
+        .drop-shadow-img {
+            -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+        }
+
+        .drop-shadow-img:hover {
+            -webkit-filter: drop-shadow(8px 8px 10px red);
+            filter: drop-shadow(8px 8px 10px red);
+        }
+
+        /* ==============
+        * 图像应用色相旋转
+        * ==============*/
+        .hue-rotate-img {
+            -webkit-filter: hue-rotate(0);
+            filter: hue-rotate(0);
+        }
+
+        .hue-rotate-img:hover {
+            -webkit-filter: hue-rotate(90deg);
+            filter: hue-rotate(90deg);
+        }
+
+        /* ==============
+        * 反转输入图像
+        * ==============*/
+        .invert-img {
+            -webkit-filter: invert(0);
+            filter: invert(0);
+        }
+
+        .invert-img:hover {
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+        }
+
+        /* ==============
+        * 图像的透明程度
+        * ==============*/
+        .opacity-img {
+            -webkit-filter: opacity(100%);
+            filter: opacity(100%);
+        }
+
+        .opacity-img:hover {
+            -webkit-filter: opacity(30%);
+            filter: opacity(30%);
+        }
+
+        /* ==============
+        * 图像的饱和度
+        * ==============*/
+        .saturate-img {
+            -webkit-filter: saturate(100%);
+            filter: saturate(100%);
+        }
+
+        .saturate-img:hover {
+            -webkit-filter: saturate(800%);
+            filter: saturate(800%);
+        }
+
+        /* ==============
+        * 图像使用多个滤镜
+        * ==============*/
+        .url-img {
+            -webkit-filter: none;
+            filter: none;
+        }
+
+        .url-img:hover {
+            -webkit-filter: contrast(200%) brightness(150%);
+            filter: contrast(200%) brightness(150%);
+        }
+    </style>
+</head>
+<body>
+    <!--灰度过滤-->
+    <div class="img-wrapper">
+        <img class="grayscale-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--深褐色过滤-->
+    <div class="img-wrapper">
+        <img class="sepia-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--高斯模糊过滤-->
+    <div class="img-wrapper">
+        <img class="blur-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--图片变亮或变暗过滤-->
+    <div class="img-wrapper">
+        <img class="brightness-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--图片对比度过滤-->
+    <div class="img-wrapper">
+        <img class="contrast-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--图像设置一个阴影效果-->
+    <img class="drop-shadow-img" height="400px" width="400px" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+
+    <!--图像应用色相旋转-->
+    <div class="img-wrapper">
+        <img class="hue-rotate-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--反转输入图像-->
+    <div class="img-wrapper">
+        <img class="invert-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--图像的透明程度-->
+    <div class="img-wrapper">
+        <img class="opacity-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--图像的饱和度-->
+    <div class="img-wrapper">
+        <img class="saturate-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+    <!--图像使用多个滤镜-->
+    <div class="img-wrapper">
+        <img class="url-img" src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/a946df29f88109cc3604a9f27eca5633.jpg" />
+    </div>
+
+</body>
+</html>

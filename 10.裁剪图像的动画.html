@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>裁剪图像的动画</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <style>
+        input {
+            transform: scale(1.5);
+            margin: 10px 5px;
+            color: #fff;
+        }
+
+        img {
+            width: 1920px;
+            height: 1080px;
+            /*transition: 0s;*/
+            object-fit: cover;
+            object-position: left-top;
+            transition: width 2s, height 4s;
+        }
+
+        input:checked + br + img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            object-position: left-top;
+            transition: width 2s, height 4s;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav><h1>裁剪图像的动画</h1></nav>
+    <main>
+        勾选裁剪图片
+        <input type="checkbox" />
+        <br />
+        <img src="https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/common/2020032122230564.jpg" alt="" />
+    </main>
+</body>
+</html>
+<!--实现原理：-->
+
+<!--一、首先给予图片一个宽高height: 1080px，width: 1920px。-->
+
+<!--二、然后用 CSS 选择器，锁定当input被选中后img标签的样式变化。当被选中时，给图片设定一个新的宽高，这里我们给宽高各自 500 像素：width: 500px，height: 500px。-->
+
+<!--三、然后我们加上了过渡效果和时间让图片改变宽高时有动画过渡效果：transition: width 2s, height 4s;。-->
+
+<!--四、最后加上object-fit: cover和object-position: left-top这两个属性来保持图片的宽高比例，这样就大功告成了！-->
