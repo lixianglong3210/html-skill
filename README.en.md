@@ -17,13 +17,13 @@ Share some new CSS skills [daily record]
 
 #### Case rendering:
 **Case parallax effect case ori game**
-![](img/gif/ori.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/ori.gif)
 
 **Hover zoom and filter image effects**
-![](img/gif/case2.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/case2.gif)
 
 **Instant dark mode darkmode mode**
-![](img/gif/case4.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/case4.gif)
 
 **Picture parallax effect**
-![](img/gif/case7.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/case7.gif)

@@ -17,13 +17,13 @@
 
 #### 案例-效果图：
 **案例-视差效果案例-Ori游戏**
-![](img/gif/ori.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/ori.gif)
 
 **悬停放大和滤镜图片特效**
-![](img/gif/case2.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/case2.gif)
 
 **瞬间黑暗模式Darkmode方式**
-![](img/gif/case4.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/case4.gif)
 
 **图片视差效果**
-![](img/gif/case7.gif)
+![](https://cdn.jsdelivr.net/gh/lixianglong3210/bg_store/img/content/gif/case7.gif)
